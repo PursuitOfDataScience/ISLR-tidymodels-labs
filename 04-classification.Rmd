@@ -344,7 +344,7 @@ Caravan_test <- Caravan[seq_len(1000), ]
 Caravan_train <- Caravan[-seq_len(1000), ]
 ```
 
-Since we are using a K-nearest neighbor model, it is importance that the variables are centered and scaled to make sure that the variables have a uniform influence. We can accomplish this transformation with `step_normalize()`, which does centering and scaling in one go.
+Since we are using a K-nearest neighbor model, it is important that the variables are centered and scaled to make sure that the variables have a uniform influence. We can accomplish this transformation with `step_normalize()`, which does centering and scaling in one go.
 
 ```{r}
 rec_spec <- recipe(Purchase ~ ., data = Caravan_train) %>%
@@ -410,7 +410,7 @@ And it appears that the model performance doesn't change much when changing from
 
 So far we have been using the `Smarket` data set to predict the stock price movement. We will now shift to a new data set, `Bikeshare`, and look at the number of bike rentals per hour in Washington, D.C.
 
-The variable of interest, *number of bike rentals per hour* can take on non-negative integer values. This makes Poisson Regression a suitable candidate to model the same.
+The variable of interest, *number of bike rentals per hour* can take on non-negative integer values. This makes Poisson Regression a suitable candidate to model the data.
 
 We start with specifying the model using the `poisson_reg()` function.
 
